@@ -26,7 +26,7 @@
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 //const keys = require('./keys');
-
+console.log(process.env.INFURA_API_KEY)
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -45,11 +45,11 @@ module.exports = {
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    // development: {
-    //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 8545,            // Standard Ethereum port (default: none)
-    //  network_id: "*",       // Any network (default: none)
-    // },
+    development: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 7545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+    },
 
     // Another network with more advanced options...
     // advanced: {
@@ -76,9 +76,9 @@ module.exports = {
     //   skipDryRun: true,     // Skip dry run before migrations? (default: false for public nets )
     //   networkCheckTimeout: 30000
     // },
-    ropsten: {
-      provider: new HDWalletProvider(process.env.DEPLOYMENT_ACCOUNT_KEY, "https://ropsten.infura.io/v3/" + process.env.INFURA_API_KEY),
-      network_id: 3,
+    rinkeby: {
+      provider: new HDWalletProvider(process.env.DEPLOYMENT_ACCOUNT_KEY, "https://rinkeby.infura.io/v3/" + process.env.INFURA_API_KEY),
+      network_id: 4,
       gas: 5000000,
     gasPrice: 20000000000, // 5 Gwei -> 20 Gwei
     skipDryRun: true
@@ -119,10 +119,10 @@ module.exports = {
     //   networkCheckTimeout: 30000
     // }
     mainnet: {
-      provider: new HDWalletProvider(process.env.DEPLOYMENT_ACCOUNT_KEY, "https://mainnet.infura.io/" + process.env.INFURA_API_KEY),
+      provider: new HDWalletProvider(process.env.DEPLOYMENT_ACCOUNT_KEY, "https://mainnet.infura.io/v3/" + process.env.INFURA_API_KEY),
       network_id: 1,
       gas: 5000000,
-      gasPrice: 5000000000 // 5 Gwei
+      gasPrice: 30000000000 // 5 Gwei
     }    
   },
 

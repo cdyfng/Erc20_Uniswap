@@ -14,19 +14,25 @@ yarn
 
 ```bash
 source ./env_example
-truffle migrate --network ropsten
+truffle migrate --network rinkeby
+```
+## Trade On Uniswap V1
+```bash
+source ./env_example
+node ./script/2.get.exchange.address.js
+
 ```
 
 ## Verify on Etherscan
 
 ```bash
-truffle run verify HACKToken --network ropsten
+truffle run verify HACKToken --network rinkeby
 ```
 
 ## Approve MultiSend.co
 
 ```bash
-truffle console --network ropsten
+truffle console --network rinkeby
 ```
 
 Then in the console:
